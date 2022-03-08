@@ -17,7 +17,8 @@ const getAccessToken = async (refresh_token: string) => {
       refresh_token,
     }),
   });
-
+console.log(client_id, client_secret
+  )
   return response.json();
 };
 
@@ -27,7 +28,7 @@ export async function fetchWithAccessToken(
   options?: RequestInit,
 ) {
   const { access_token } = await getAccessToken(refreshToken);
-
+console.log(access_token)
   return fetch(url, {
     ...options,
     headers: {

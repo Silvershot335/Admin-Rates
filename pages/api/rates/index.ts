@@ -25,12 +25,12 @@ async function getRates(): Promise<HomePageRate[]> {
       return document.data()?.title;
     })
     .map((document): HomePageRate => {
-      const { title, date, deadline, playlist } = document.data();
+      const { title, date, playlist } = document.data();
       return {
         id: document.id,
         title,
         date: date.toDate().toISOString(),
-        deadline: deadline.toDate().toISOString(),
+        deadline:"" ,
         playlist,
       };
     });

@@ -49,6 +49,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
+  console.log(req)
   const session = (await getSession({ req })) as SessionWithToken;
   const accessToken = session?.token?.accessToken;
 
@@ -112,6 +113,7 @@ export default async function handler(
     }
 
     const idResponse = (await getSpotifyID(session)) as { id: string };
+    console.log(idResponse)
     if (!idResponse?.id) {
       return res.status(400).json({ success: false, result: idResponse });
     }
