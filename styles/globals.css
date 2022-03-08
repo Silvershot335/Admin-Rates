@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+div#__next {
+  @apply dark:bg-black dark:text-white w-full h-full text-black bg-white;
+}
